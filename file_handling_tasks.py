@@ -1,44 +1,43 @@
-# file_handling_tasks.py
+# 1. Create File: Write "Hello, world!" to a text file
+def create_file(filename):
+    with open(filename, 'w') as file:
+        file.write("Hello, world!\n")
 
-# This file includes placeholders for file handling tasks.
-# Students should complete each function according to the instructions.
+# 2. Read File: Read and print contents of a file
+def read_file(filename):
+    with open(filename, 'r') as file:
+        content = file.read()
+    print(content)
 
-def task1_create_file():
-    # TODO: Create a new text file and write "Hello, world!" to it.
-    pass
+# 3. Append File: Add a new line to an existing file
+def append_file(filename, new_line):
+    with open(filename, 'a') as file:
+        file.write(new_line + '\n')
 
-def task2_read_file():
-    # TODO: Read the contents of a file and print them to the console.
-    pass
+# 4. Count Lines: Count total number of lines in a text file
+def count_lines(filename):
+    with open(filename, 'r') as file:
+        lines = file.readlines()
+    return len(lines)
 
-def task3_append_file():
-    # TODO: Append a new line of text to an existing file.
-    pass
+# 5. Find Word: Count how many times a word appears in a file
+def find_word(filename, word):
+    with open(filename, 'r') as file:
+        content = file.read()
+    words = content.lower().split()
+    return words.count(word.lower())
 
-def task4_count_lines():
-    # TODO: Count and print the number of lines in a file.
-    pass
+# 6. Copy File: Copy contents from one file to another
+def copy_file(source_file, destination_file):
+    with open(source_file, 'r') as src:
+        content = src.read()
+    with open(destination_file, 'w') as dest:
+        dest.write(content)
 
-def task5_find_word():
-    # TODO: Find whether a specific word exists in the file and how many times.
-    pass
-
-def task6_copy_file():
-    # TODO: Copy the contents of one file to another.
-    pass
-
-def task7_replace_word():
-    # TODO: Replace a specific word in the file with another word.
-    pass
-
-def task8_read_csv():
-    # TODO: Read a CSV file and print each row.
-    pass
-
-def task9_write_csv():
-    # TODO: Write a list of dictionaries to a CSV file.
-    pass
-
-def task10_json_file():
-    # TODO: Create a JSON file from a Python dictionary and read it back.
-    pass
+# 7. Replace Word: Replace a word in the file with another
+def replace_word(filename, old_word, new_word):
+    with open(filename, 'r') as file:
+        content = file.read()
+    new_content = content.replace(old_word, new_word)
+    with open(filename, 'w') as file:
+        file.write(new_content)
